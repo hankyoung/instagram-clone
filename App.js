@@ -2,7 +2,7 @@ import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import LoginScreen from "./components/LoginScreen";
-import Constants from "expo-constants";
+import { expoStatusBarHeight } from "./utils/Constants";
 
 export default function App() {
   return (
@@ -23,6 +23,6 @@ const styles = StyleSheet.create({
   },
   safeArea: {
     flex: 1,
-    paddingTop: Constants.statusBarHeight,
+    paddingTop: expoStatusBarHeight,
   },
 });
