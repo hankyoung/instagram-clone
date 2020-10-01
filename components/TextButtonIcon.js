@@ -1,16 +1,13 @@
 import React from "react";
-import { StyleSheet, Text, TouchableOpacity } from "react-native";
+import { StyleSheet, TouchableOpacity, Text } from "react-native";
 import { buttonHeight, buttonWidth } from "../utils/Constants";
 
-export default function LoginHelp(props) {
+export default function TextButtonIcon(props) {
   return (
     <TouchableOpacity style={{ ...styles.button, ...props.style }}>
-      <Text style={styles.text}>
-        Forgot your login details?
-        <Text style={{ color: "black", fontWeight: "bold" }}>
-          {" "}
-          Get help logging in.
-        </Text>
+      {props.icon}
+      <Text style={{ fontWeight: "bold", opacity: 0.8, color: "#0086FF" }}>
+        {props.children}
       </Text>
     </TouchableOpacity>
   );
@@ -18,14 +15,11 @@ export default function LoginHelp(props) {
 
 const styles = StyleSheet.create({
   button: {
+    flexDirection: "row",
     width: buttonWidth,
     borderRadius: 5,
     height: buttonHeight,
     justifyContent: "center",
     alignItems: "center",
-  },
-  text: {
-    fontSize: 13,
-    color: "grey",
   },
 });

@@ -5,9 +5,7 @@ import { buttonHeight, buttonWidth } from "../utils/Constants";
 export default function CustomButton(props) {
   return (
     <TouchableOpacity style={{ ...styles.button, ...props.style }}>
-      <Text style={{ ...styles.text, color: props.textColor }}>
-        {props.children}
-      </Text>
+      <Text style={styles.text}>{props.children}</Text>
     </TouchableOpacity>
   );
 }
@@ -15,13 +13,14 @@ export default function CustomButton(props) {
 const styles = StyleSheet.create({
   button: {
     width: buttonWidth,
-    borderRadius: 5,
     height: buttonHeight,
+    borderRadius: 5,
     justifyContent: "center",
     alignItems: "center",
   },
   text: {
     fontWeight: "bold",
     opacity: 0.8,
+    color: "#fff",
   },
 });

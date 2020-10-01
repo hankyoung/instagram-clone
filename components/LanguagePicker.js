@@ -18,22 +18,23 @@ export default function LanguagePicker() {
         animationType="fade"
         transparent={true}
         visible={modalVisible}
-        onRequestClose={() => {
-          setModalVisible(false);
-        }}
+        onRequestClose={() => setModalVisible(false)}
       >
         <TouchableWithoutFeedback onPress={() => setModalVisible(false)}>
-          <View style={styles.centeredView}>
+          <View
+            style={{
+              alignItems: "center",
+              backgroundColor: "rgba(100,100,100, 0.9)",
+            }}
+          >
             <LanguageList />
           </View>
         </TouchableWithoutFeedback>
       </Modal>
 
       <TouchableOpacity
-        style={styles.button}
-        onPress={() => {
-          setModalVisible(true);
-        }}
+        style={{ alignItems: "center" }}
+        onPress={() => setModalVisible(true)}
       >
         <Text>English (United States)</Text>
       </TouchableOpacity>
@@ -45,17 +46,5 @@ const styles = StyleSheet.create({
   container: {
     justifyContent: "center",
     height: 10,
-  },
-  button: {
-    alignItems: "center",
-  },
-  centeredView: {
-    alignItems: "center",
-    backgroundColor: "rgba(100,100,100, 0.9)",
-    // position: "absolute",
-    // top: 0,
-    // right: 0,
-    // left: 0,
-    // bottom: 0,
   },
 });
