@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, TextInput } from "react-native";
 import { buttonHeight, buttonWidth } from "../utils/Constants";
 
-export default function CustomInput({
+export default function SquaredInput({
   placeholder,
   secureTextEntry,
   ...props
