@@ -15,6 +15,7 @@ import {
   screenHeight,
   systemNavigationSoftButtonHeight,
   languageItems,
+  colors,
 } from "../utils/Constants";
 import { Feather } from "@expo/vector-icons";
 
@@ -22,9 +23,9 @@ export default function LanguagePicker() {
   const [modalVisible, setModalVisible] = useState(false);
 
   return (
-    <View style={{ justifyContent: "center", height: 10 }}>
+    <View style={styles.container}>
       <TouchableOpacity
-        style={{ alignItems: "center" }}
+        style={styles.selectButton}
         onPress={() => setModalVisible(true)}
       >
         <Text style={{ color: "grey", fontSize: 13 }}>
@@ -55,7 +56,7 @@ export default function LanguagePicker() {
 function LanguageList(props) {
   return (
     <TouchableWithoutFeedback onPress={() => {}}>
-      <View style={styles.container}>
+      <View style={styles.languageListContainer}>
         <View style={styles.label}>
           <Text style={{ fontWeight: "bold" }}>SELECT YOUR LANGUAGE</Text>
         </View>
@@ -90,12 +91,21 @@ function ListItem({ item }) {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    justifyContent: "center",
+    height: 32,
+  },
+  selectButton: {
+    height: 32,
+    justifyContent: "center",
+    alignItems: "center",
+  },
   label: {
     marginStart: 10,
     height: 36,
     justifyContent: "center",
   },
-  container: {
+  languageListContainer: {
     width: modalWidth,
     backgroundColor: "white",
   },
