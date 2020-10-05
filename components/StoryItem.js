@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { colors, margin } from "../utils/Constants";
 
 export default function StoryItem({ item }) {
+  const [seen, setSeen] = useState(false);
+
   return (
-    <TouchableOpacity style={styles.centeredView}>
+    <TouchableOpacity style={styles.centeredView} onPress={() => setSeen(true)}>
       <View
         style={[
           styles.imageContainer,
-          { borderColor: item.seen ? colors.lightGrey : colors.red },
+          { borderColor: seen ? colors.lightGrey : colors.red },
         ]}
       >
         <Image style={styles.image} source={{ uri: item.imageUrl }} />

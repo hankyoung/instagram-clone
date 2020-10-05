@@ -75,6 +75,39 @@ export const storyItems = [
   },
 ];
 
+export const articleItems = [
+  {
+    id: "1",
+    avatarUrl:
+      "https://cdn2.scratch.mit.edu/get_image/gallery/3968170_200x130.png",
+    user: "5.mins.craft",
+    imageUrl:
+      "https://cdn.pixabay.com/photo/2020/04/28/04/05/beautiful-landscape-5102555_960_720.jpg",
+    views: "685,357",
+    time: "1 hour ago",
+  },
+  {
+    id: "2",
+    avatarUrl:
+      "https://scontent.fhan3-1.fna.fbcdn.net/v/t1.0-9/16142546_1238783546191174_8909918855126658185_n.png?_nc_cat=102&_nc_sid=e007fa&_nc_ohc=xUforU6PIzEAX82DbXh&_nc_ht=scontent.fhan3-1.fna&oh=ed11587375273870278137522bc6f62c&oe=5FA00347",
+    user: "thangflycomic",
+    imageUrl:
+      "http://truyentranhhai.com/wp-content/uploads/2017/05/17545588_1314647561938105_9057391989139810853_o.png",
+    views: "201,313",
+    time: "2 hour ago",
+  },
+  {
+    id: "3",
+    avatarUrl:
+      "https://cdn.moveek.com/media/cache/large/9d5c8c7e42d87c7d9a413aea2c8935dfa88be9b4.jpeg",
+    user: "happy.tree.friend",
+    imageUrl:
+      "https://cdn.moveek.com/media/cache/large/9d5c8c7e42d87c7d9a413aea2c8935dfa88be9b4.jpeg",
+    views: "2,287,779",
+    time: "2 hour ago",
+  },
+];
+
 export const colors = {
   lightGrey: "#DFDFDF",
   lightGray: "#DFDFDF",
