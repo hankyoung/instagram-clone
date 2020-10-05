@@ -44,40 +44,49 @@ export const storyItems = [
     imageUrl:
       "https://cdn2.scratch.mit.edu/get_image/gallery/3968170_200x130.png",
     text: "5.mins.craft",
+    seen: false,
   },
   {
     id: "3",
     imageUrl:
       "https://scontent.fhan3-1.fna.fbcdn.net/v/t1.0-9/16142546_1238783546191174_8909918855126658185_n.png?_nc_cat=102&_nc_sid=e007fa&_nc_ohc=xUforU6PIzEAX82DbXh&_nc_ht=scontent.fhan3-1.fna&oh=ed11587375273870278137522bc6f62c&oe=5FA00347",
     text: "thangflycomic",
+    seen: true,
   },
   {
     id: "5",
     imageUrl: "https://jobsgo.vn/media/img/employer/6597-100x100.jpg",
     text: "hoan.my",
+    seen: true,
   },
   {
     id: "6",
     imageUrl:
       "https://codermart.vn/wp-content/uploads/2020/08/hello-world-banner-1400x743.png",
-    text: "hello.worl",
+    text: "hello.world",
+    seen: false,
   },
   {
     id: "7",
     imageUrl:
       "https://cdn.moveek.com/media/cache/large/9d5c8c7e42d87c7d9a413aea2c8935dfa88be9b4.jpeg",
     text: "happy.tree.friend",
+    seen: true,
   },
 ];
 
 export const colors = {
   lightGrey: "#DFDFDF",
+  lightGray: "#DFDFDF",
   darkGrey: "#404040",
   darkGray: "#404040",
+  grey: "#808080",
+  gray: "#808080",
   blue: "#0086FF",
   white: "#FFF",
   black: "#000",
   white1: "#FAFAFA",
+  red: "#F00",
 };
 
 export const margin = {

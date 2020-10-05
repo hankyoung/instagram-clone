@@ -1,19 +1,16 @@
 import React from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { colors, margin } from "../utils/Constants";
+import { AntDesign } from "@expo/vector-icons";
 
-export default function StoryItem({ item }) {
+export default function YourStoryItem({ imageUrl }) {
   return (
     <TouchableOpacity style={styles.centeredView}>
-      <View
-        style={[
-          styles.imageContainer,
-          { borderColor: item.seen ? colors.lightGrey : colors.red },
-        ]}
-      >
-        <Image style={styles.image} source={{ uri: item.imageUrl }} />
+      <View style={styles.imageContainer}>
+        <Image style={styles.image} source={{ uri: imageUrl }} />
+        <AntDesign style={styles.imageIcon} size={20} name={"pluscircle"} />
       </View>
-      <Text style={styles.text}>{item.text}</Text>
+      <Text style={styles.text}>Your story</Text>
     </TouchableOpacity>
   );
 }
@@ -27,8 +24,6 @@ const styles = StyleSheet.create({
   imageContainer: {
     width: 64,
     height: 64,
-    borderWidth: 1.4,
-    borderColor: "red",
     borderRadius: 32,
     justifyContent: "center",
     alignItems: "center",
@@ -38,6 +33,14 @@ const styles = StyleSheet.create({
     height: 56,
     borderRadius: 28,
     backgroundColor: "pink",
+  },
+  imageIcon: {
+    position: "absolute",
+    zIndex: 1,
+    right: 0,
+    bottom: 0,
+    color: colors.blue,
+    borderRadius: 10,
   },
   text: {
     fontSize: 12,
