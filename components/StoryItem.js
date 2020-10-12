@@ -15,7 +15,9 @@ export default function StoryItem({ item }) {
       >
         <Image style={styles.image} source={{ uri: item.imageUrl }} />
       </View>
-      <Text style={styles.text}>{item.text}</Text>
+      <Text numberOfLines={1} style={styles.text}>
+        {item.text}
+      </Text>
     </TouchableOpacity>
   );
 }
@@ -44,5 +46,6 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 12,
     marginTop: 8,
+    width: 64,
   },
 });

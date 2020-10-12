@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Image,
   StyleSheet,
@@ -7,8 +7,9 @@ import {
   TouchableOpacity,
   TouchableWithoutFeedback,
 } from "react-native";
-import { colors, margin, screenHeight, screenWidth } from "../utils/Constants";
+import { colors, margin } from "../utils/Constants";
 import { Feather, AntDesign, FontAwesome } from "@expo/vector-icons";
+import ScaledImage from "../components/ScaledImage";
 
 export default function Article({ item }) {
   const [isHearted, setHeart] = useState(false);
@@ -25,7 +26,9 @@ export default function Article({ item }) {
           <Feather size={16} name={"more-horizontal"} />
         </TouchableOpacity>
       </View>
-      <Image style={styles.image} source={{ uri: item.imageUrl }} />
+
+      <ScaledImage uri={item.imageUrl} />
+
       <View style={styles.bottom}>
         <View style={styles.bottomLeft}>
           <TouchableWithoutFeedback onPress={() => setHeart(!isHearted)}>
@@ -57,6 +60,7 @@ export default function Article({ item }) {
           />
         </TouchableWithoutFeedback>
       </View>
+
       <View style={styles.footer}>
         <Text style={styles.views}>
           {item.views}
@@ -92,10 +96,6 @@ const styles = StyleSheet.create({
   },
   moreHorizontal: {
     marginRight: 20,
-  },
-  image: {
-    width: screenWidth,
-    height: screenHeight / 2,
   },
   bottom: {
     marginLeft: margin.left,
