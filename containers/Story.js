@@ -5,28 +5,26 @@ import YourStoryItem from "../components/YourStoryItem";
 import { colors } from "../utils/Constants";
 
 export default function Story({ storyItems }) {
+  const renderItem = ({ item }) => <StoryItem item={item} />;
+
   return (
     <View style={styles.storyContainer}>
       <FlatList
+        ListHeaderComponent={
+          <YourStoryItem
+            imageUrl={
+              "https://cdn2.scratch.mit.edu/get_image/gallery/3968170_200x130.pngs"
+            }
+          />
+        }
+        ListHeaderComponentStyle={{
+          justifyContent: "center",
+          alignItems: "center",
+        }}
         horizontal={true}
         showsHorizontalScrollIndicator={false}
         data={storyItems}
-        renderItem={({ item, index }) => {
-          if (index === 0) {
-            return (
-              <>
-                <YourStoryItem
-                  imageUrl={
-                    "https://cdn2.scratch.mit.edu/get_image/gallery/3968170_200x130.pngs"
-                  }
-                />
-                <StoryItem item={item} />
-              </>
-            );
-          } else {
-            return <StoryItem item={item} />;
-          }
-        }}
+        renderItem={renderItem}
         keyExtractor={(item) => item.id}
       />
     </View>

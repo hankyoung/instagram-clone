@@ -24,6 +24,10 @@ const logoWith = screenWidth / 4.5;
 const logoHeight = (logoWith * 279) / 961;
 
 export default function HomeScreen() {
+  const renderItem = ({ item }) => {
+    return <Article item={item} keyExtractor={(item) => item.id} />;
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>
@@ -37,20 +41,10 @@ export default function HomeScreen() {
       </View>
       <View style={styles.articleContainer}>
         <FlatList
+          ListHeaderComponent={<Story storyItems={storyItems} />}
           showsVerticalScrollIndicator={false}
           data={articleItems}
-          renderItem={({ item, index }) => {
-            if (index === 0) {
-              return (
-                <>
-                  <Story storyItems={storyItems} />
-                  <Article item={item} keyExtractor={(item) => item.id} />
-                </>
-              );
-            } else {
-              return <Article item={item} keyExtractor={(item) => item.id} />;
-            }
-          }}
+          renderItem={renderItem}
         />
       </View>
     </View>
